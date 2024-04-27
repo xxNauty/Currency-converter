@@ -2,7 +2,6 @@ package com.example.konwerterwalut.service;
 
 import com.example.konwerterwalut.model.Currency;
 import com.google.gson.Gson;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -40,7 +39,7 @@ public class UpdateSavedCurrencies {
 
     //co godzinę
     @Scheduled(cron = "0 0 * * * *")
-    public void update(){
+    public void update() {
         this.updateSavedCurrencies();
     }
 }

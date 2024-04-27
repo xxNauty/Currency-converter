@@ -11,12 +11,11 @@ public class Currency {
     public static final String CURRENCY_CHF = "CHF";
     public static final String CURRENCY_GBP = "GBP";
 
-    public static final String[] availableCurrencies = {
+    public static final String[] convertableCurrencies = {
             CURRENCY_USD,
             CURRENCY_EUR,
             CURRENCY_CHF,
             CURRENCY_GBP,
-            CURRENCY_DEFAULT
     };
 
     public String currency;

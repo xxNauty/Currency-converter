@@ -1,31 +1,36 @@
 package com.example.konwerterwalut.service;
 
 import com.example.konwerterwalut.model.Currency;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GetCurrencyRatesFromApi {
 
-    public static final List<String> supportedCurrencies = List.of("USD", "EUR", "GBP", "CHF");
+    @Value("${rates.api.url}")
+    public String ratesApiUrl;
 
-    public List<Currency> getRates(){
-        final String remoteApiUrl = "http://api.nbp.pl/api/exchangerates/rates/A/";
+    public List<Currency> getRates() {
         ArrayList<Currency> rates = new ArrayList<>();
 
-        for (String currency : supportedCurrencies) {
+        for (String currency : Currency.convertableCurrencies) {
             RestTemplate restTemplate = new RestTemplate();
+
             HttpHeaders headers = new HttpHeaders();
             headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 
             HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+
             ResponseEntity<Currency> response = restTemplate.exchange(
-                    remoteApiUrl + currency,
+                    ratesApiUrl + currency,
                     HttpMethod.GET,
                     httpEntity,
                     Currency.class

@@ -1,1 +1,47 @@
-[{"currency":"dolar amerykański","code":"USD","rates":[{"mid":4.0276}]},{"currency":"euro","code":"EUR","rates":[{"mid":4.3198}]},{"currency":"funt szterling","code":"GBP","rates":[{"mid":5.0427}]},{"currency":"frank szwajcarski","code":"CHF","rates":[{"mid":4.4131}]}]
+[
+  {
+    "currency": "dolar amerykański",
+    "code": "USD",
+    "rates": [
+      {
+        "mid": 4.0245
+      }
+    ]
+  },
+  {
+    "currency": "euro",
+    "code": "EUR",
+    "rates": [
+      {
+        "mid": 4.3225
+      }
+    ]
+  },
+  {
+    "currency": "frank szwajcarski",
+    "code": "CHF",
+    "rates": [
+      {
+        "mid": 4.4145
+      }
+    ]
+  },
+  {
+    "currency": "funt szterling",
+    "code": "GBP",
+    "rates": [
+      {
+        "mid": 5.0414
+      }
+    ]
+  },
+  {
+    "currency": "korona norweska",
+    "code": "NOK",
+    "rates": [
+      {
+        "mid": 0.3669
+      }
+    ]
+  }
+]
